@@ -64,8 +64,13 @@ jobs:
          ./scripts/RunAppiumServer.sh  
          
     - name: Run Appium Tests
-      run: |
-       mvn clean install 
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: ${{ matrix.api-level }}
+        target: ${{ matrix.target }}
+        arch: x86_64
+        profile: pixel_6
+        script: mvn clean test -Pandroid
        
  
        
