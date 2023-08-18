@@ -65,7 +65,7 @@ jobs:
          
     - name: Run Appium Tests
       run: |
-          mvn clean install -Dtarget=local -DdeviceName="test API 29" -DdeviceVersion="32.1.14"
+          mvn test
  
        
   
