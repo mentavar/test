@@ -64,14 +64,8 @@ jobs:
          ./scripts/RunAppiumServer.sh  
          
     - name: Run Appium Tests
-      uses: reactivecircus/android-emulator-runner@v2
-      with:
-        api-level: ${{ matrix.api-level }}
-        target: ${{ matrix.target }}
-        arch: x86_64
-        profile: pixel_6
-        script: mvn clean test -Pandroid
-       
+      run: |
+          mvn clean install -Dtarget=local -DdeviceName=<test API 29> -DdeviceVersion=<32.1.14>
  
        
   
