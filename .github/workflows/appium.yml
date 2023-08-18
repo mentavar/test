@@ -65,7 +65,7 @@ jobs:
          
     - name: Run Appium Tests
       run: |
-       chmod +x ./execution.sh
+       chmod +x execution.sh
     
        
  
