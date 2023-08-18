@@ -34,9 +34,7 @@
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.0.0-M3</maven-failsafe-plugin.version>
-         <configuration>
-           <testFailureIgnore>true</testFailureIgnore>
-         </configuration>
+       
         <assembly.phase>none</assembly.phase>
         <serenity-maven.version>2.2.0</serenity-maven.version>
     </properties>
