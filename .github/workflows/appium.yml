@@ -65,8 +65,7 @@ jobs:
          
     - name: Run Appium Tests
       run: |
-       mvn clean install -Dappium.hub=http://127.0.0.1:4723/wd/hub -Dwebdriver.driver=appium -Dappium.platformName=Android -Dappium.deviceName="test_API_29" -Dcucumber.options="--tags '@ANDROID'" "$@"
-    
+       mvn clean install 
        
  
        
