@@ -1,0 +1,45 @@
+name: Appium Tests
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17  # Adjust the Java version as needed
+
+      - name: Install Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          sdk-platform: "platforms;android-33"  # Adjust the platform version as needed
+
+      - name: Start Emulator
+        run: |
+          echo "no" | avdmanager create avd --force --name test_emulator --abi google_apis/x86_64 --package "system-images;android-33;google_apis;x86_64"
+          emulator -avd test_emulator -no-window -no-audio &
+
+      - name: Wait for Emulator
+        run: android-wait-for-emulator
+
+      - name: Grant Emulator Permissions
+        run: adb shell pm grant com.google.android.youtube android.permission.SET_ANIMATION_SCALE  # Adjust the package name
+
+      - name: Install Dependencies
+        run: npm install  # Adjust for your dependency management
+
+      - name: Run Appium Tests
+        run: npm test  # Adjust the test command
+
+      - name: Stop Emulator
+        run: adb emu kill
+
