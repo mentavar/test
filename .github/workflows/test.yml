@@ -27,7 +27,7 @@ jobs:
       - name: Start Emulator
         run: |
           echo "no" | avdmanager create avd --force --name Pixel 6 API 33 --abi google_apis/x86_64 --package "system-images;android-33;google_apis;x86_64"
-          emulator -avd test_emulator -no-window -no-audio &
+          emulator -avd Pixel 6 API 33 -no-window -no-audio &
 
       - name: Wait for Emulator
         run: android-wait-for-emulator
