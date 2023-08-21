@@ -9,7 +9,7 @@ env:
   ANDROID_BUILD_TOOLS_VERSION: 34.0.0
   ANDROID_SDK_PACKAGES: system-images;android-29;google_apis;x86
   EMULATOR_TIMEOUT: 550
-  EMULATOR_NAME: test API 29
+  EMULATOR_NAME: test API
 jobs:
   build:
     runs-on: macos-latest
@@ -44,7 +44,7 @@ jobs:
   
     - name: Build emulator
       run: |
-       echo "no" |/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name test API 29 --package "system-images;android-29;google_apis;x86" --tag "google_apis" --abi "x86" --device test API 29
+       echo "no" |/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name test API --package "system-images;android-29;google_apis;x86" --tag "google_apis" --abi "x86" --device test API
 
     - name: Launch emulator
       run: |
