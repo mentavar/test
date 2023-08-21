@@ -27,9 +27,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18.16.1'
-
-    - name: Install Dependencies
-      run: npm install  # Install Appium and other dependencies
         
     - name: Start Emulator
       run: |
