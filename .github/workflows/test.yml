@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main  # Adjust the branch name as needed
-
 jobs:
   test:
     runs-on: macos-latest
