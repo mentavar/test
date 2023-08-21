@@ -36,7 +36,7 @@ public class WebDriverFactory {
         envDataConfig = new EnvDataConfig();
         context = test.context();
         DesiredCapabilities caps1 = new DesiredCapabilities();
-        caps1.setCapability("deviceName", "test API 29");
+        caps1.setCapability("deviceName", "test");
         //caps1.setCapability("udid", "40475748"); //DeviceId from "adb devices" command
         caps1.setCapability("udid", "emulator-5554"); //DeviceId from "adb devices" command
         caps1.setCapability("platformName", "Android");
