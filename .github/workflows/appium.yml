@@ -9,7 +9,7 @@ env:
   ANDROID_BUILD_TOOLS_VERSION: 34.0.0
   ANDROID_SDK_PACKAGES: system-images;android-29;google_apis;x86
   EMULATOR_TIMEOUT: 550
-  EMULATOR_NAME: test API
+  EMULATOR_NAME: test
 jobs:
   build:
     runs-on: macos-latest
