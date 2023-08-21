@@ -25,7 +25,7 @@ source ~/.bashrc
 
 # Install Android Image version 33
 yes | sudo sdkmanager "platform-tools" "platforms;android-33" "emulator"
-yes | sudo sdkmanager "system-images;android-33;google_apis;x86_84"
+yes | sudo sdkmanager "system-images;android-33;google_apis;Pixel 6 API 33"
 emulator -version
 
 echo "INSTALL ANDROID SDK DONE!"
