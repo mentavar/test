@@ -7,7 +7,7 @@ env:
   ANDROID_TARGET: google_apis
   API_LEVEL: 33
   ANDROID_BUILD_TOOLS_VERSION: 32.1.14
-  ANDROID_SDK_PACKAGES: system-images;android-33;google_apis;x86_64
+  ANDROID_SDK_PACKAGES: C:\Users\ftheofil\AppData\Local\Android\Sdk\system-images\android-33\google_apis\x86_64
   EMULATOR_TIMEOUT: 550
   EMULATOR_NAME: Pixel 6 API 33
 
