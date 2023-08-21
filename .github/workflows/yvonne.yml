@@ -1,9 +1,6 @@
-name: Appium Tests
-
-on:
-  push:
-    branches:
-      - main  # Change this to your default branch
+name: Appium CI
+# on push we will trigger our code
+on: [push]
 
 jobs:
   build:
@@ -16,8 +13,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-        java-version: 17
-        distribution: 'oracle'
+         java-version: 17
+         istribution: 'oracle'
       - name: Set up Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
