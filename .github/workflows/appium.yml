@@ -2,7 +2,7 @@ name: Appium CI
 # on push we will trigger our code
 on: [push]
 env:
- 
+
   ANDROID_ARCH: arm64-v8a
   ANDROID_TARGET: google_apis
   API_LEVEL: 33
