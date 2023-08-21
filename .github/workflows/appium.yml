@@ -7,7 +7,7 @@ env:
   ANDROID_TARGET: google_apis_playstore
   API_LEVEL: 33
   ANDROID_BUILD_TOOLS_VERSION: 34.0.4
-  ANDROID_SDK_PACKAGES: system-images;android-33;google_apis_playstore;x86_64 platforms;android-33 build-tools;33.0.2 platform-tools emulator
+  ANDROID_SDK_PACKAGES: system-images;android-33;google_apis_playstore;x86_64
   EMULATOR_TIMEOUT: 650
   EMULATOR_NAME: Pixel 6 API 33
 jobs:
