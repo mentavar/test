@@ -19,7 +19,7 @@ jobs:
           java-version: 17  # Adjust the Java version as needed
 
       - name: Install Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v2
         with:
           sdk-platform: "platforms;android-33"  # Adjust the platform version as needed
 
