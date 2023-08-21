@@ -16,7 +16,6 @@ env:
   ANDROID_SDK_PACKAGES: system-images;android-33;google_apis;x86_64
   EMULATOR_TIMEOUT: 550
   EMULATOR_NAME: Pixel 6 API 33
-
 jobs:
   build:
     runs-on: macos-latest
