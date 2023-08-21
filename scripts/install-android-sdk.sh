@@ -23,9 +23,9 @@ echo 'export SDK=$ANDROID_HOME' >> ~/.bashrc
 echo 'export PATH=$SDK/emulator:$SDK/tools:$SDK/tools/bin:$SDK/platform-tools:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
-# Install Android Image version 29
-yes | sudo sdkmanager "platform-tools" "platforms;android-29" "emulator"
-yes | sudo sdkmanager "system-images;android-29;google_apis;x86"
+# Install Android Image version 33
+yes | sudo sdkmanager "platform-tools" "platforms;android-33" "emulator"
+yes | sudo sdkmanager "system-images;android-33;google_apis;x86_84"
 emulator -version
 
 echo "INSTALL ANDROID SDK DONE!"
