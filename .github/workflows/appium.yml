@@ -39,6 +39,7 @@ jobs:
       run: |
            yes Y | sdkmanager --licenses
            sdkmanager --install ${ANDROID_SDK_PACKAGES}
+           yes Y | sdkmanager --licenses
   
     - name: Build emulator
       run: |
