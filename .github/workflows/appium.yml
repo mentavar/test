@@ -27,28 +27,16 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18.16.1'
-        
-    - name: Android emulator
-      uses: actions/checkout@v3
-        
-    - name: Add avdmanager and sdkmanager to system PATH
-      run: |
-            echo "$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/${{ env.ANDROID_BUILD_TOOLS_VERSION }}" >> $GITHUB_PATH
 
-    - name: Install Sdk
+    - name: Install Dependencies
+      run: npm install  # Install Appium and other dependencies
+        
+    - name: Start Emulator
       run: |
-           yes Y | sdkmanager --licenses
-           sdkmanager --install ${ANDROID_SDK_PACKAGES}
-  
-    - name: Build emulator
-      run: |
-            echo "no" | avdmanager --verbose create avd --force -n $EMULATOR_NAME --abi "${ANDROID_TARGET}/${ANDROID_ARCH}" -k "system-images;android-${API_LEVEL};${ANDROID_TARGET};${ANDROID_ARCH}"
-
-    - name: Launch emulator
-      run: |
-          chmod +x ./scripts/start-emulator.sh
-          EMULATOR_TIMEOUT=$EMULATOR_TIMEOUT EMULATOR_NAME=$EMULATOR_NAME ./scripts/start-emulator.sh
-   
+        # Start your emulator with API 33
+        # You might use the Android Emulator Runner or similar tools
+        # Example:
+        emulator -avd Pixel 6 API 33 -no-window
     - name: Install the Emulator
       run: |
          chmod +x ./scripts/RunAppiumServer.sh
