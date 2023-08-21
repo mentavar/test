@@ -26,8 +26,8 @@ jobs:
 
       - name: Start Emulator
         run: |
-          echo "no" | avdmanager create avd --force --name "test API 29" --abi google_apis/x86_64 --package "system-images;android-29;google_apis;x86_64"
-          emulator -avd "test API 29" -no-window -no-audio &
+          echo "no" | avdmanager create avd --force --name test API 29 --abi google_apis/x86_64 --package "system-images;android-29;google_apis;x86_64"
+          emulator -avd test API 29 -no-window -no-audio &
 
       - name: Wait for Emulator
         run: android-wait-for-emulator
