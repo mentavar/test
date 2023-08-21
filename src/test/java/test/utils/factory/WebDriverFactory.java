@@ -40,7 +40,7 @@ public class WebDriverFactory {
         //caps1.setCapability("udid", "40475748"); //DeviceId from "adb devices" command
         caps1.setCapability("udid", "emulator-5554"); //DeviceId from "adb devices" command
         caps1.setCapability("platformName", "Android");
-        caps1.setCapability("platformVersion", "12.0");
+        caps1.setCapability("platformVersion", "13.0");
         caps1.setCapability("automationName", "UiAutomator2");
         caps1.setCapability("skipUnlock", "true");
         caps1.setCapability("appPackage", "com.google.android.youtube");
