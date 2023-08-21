@@ -14,7 +14,7 @@ fi
 emulator -version
 
 # create virtual device, default using Android 9 Pie image (API Level 28)
-echo no | avdmanager create avd -n Pixel 6 API 33 -k "system-images;android-33;google_apis;arm64-v8a"
+echo no | avdmanager create avd -n Pixel 6 API 33 -k "system-images;android-33;google_apis;x86_64"
 
 # start the emulator
 emulator -avd Pixel 6 API 33 -no-audio -no-window -no-accel &
