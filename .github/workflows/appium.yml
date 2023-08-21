@@ -11,7 +11,7 @@ env:
   EMULATOR_NAME: Pixel 6 API 33
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
     strategy: # we are using strategy if we need to run on parallel with different devices and version
      matrix:
        api-level: [33] #29
@@ -28,9 +28,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18.16.1'
-        
-    - name: Android emulator
-      uses: actions/checkout@v3
         
     - name: Add avdmanager and sdkmanager to system PATH
       run: |
@@ -53,12 +50,10 @@ jobs:
     - name: Start Emulator
       run: 
          chmod +x ./scripts/start_emulator_1.sh
-          ./scripts/start_emulator_1.sh
        
     - name: Install Appium
       run: |
          chmod +x ./scripts/RunAppiumServer.sh
-         ./scripts/RunAppiumServer.sh  
          
     - name: Run Appium Tests
       run: |
