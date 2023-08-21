@@ -22,12 +22,12 @@ jobs:
       - name: Install Android SDK
         uses: android-actions/setup-android@v2
         with:
-          sdk-platform: "platforms;android-33"  # Adjust the platform version as needed
+          sdk-platform: "platforms;android-29"  # Adjust the platform version as needed
 
       - name: Start Emulator
         run: |
-          echo "no" | avdmanager create avd --force --name Pixel 6 API 33 --abi google_apis/x86_64 --package "system-images;android-33;google_apis;x86_64"
-          emulator -avd Pixel 6 API 33 -no-window -no-audio &
+          echo "no" | avdmanager create avd --force --name test API 29 --abi google_apis/x86_64 --package "system-images;android-29;google_apis;x86_64"
+          emulator -avd test API 29 -no-window -no-audio &
 
       - name: Wait for Emulator
         run: android-wait-for-emulator
