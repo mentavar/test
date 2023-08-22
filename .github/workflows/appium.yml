@@ -55,6 +55,7 @@ jobs:
        
     - name: Run Appium Tests
       run: |
+          cd C:\Projects\testyoutube
           mvn test
  
        
