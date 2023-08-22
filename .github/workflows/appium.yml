@@ -52,7 +52,7 @@ jobs:
     - name: Install and run Appium Server
       run: |
          chmod +x ./scripts/RunAppiumServer.sh
-         ./scripts/RunAppiumServer.sh  
+         ./scripts/RunAppiumServer.sh &
        
     - name: Run Appium Tests
       run: |
