@@ -20,5 +20,10 @@ public class HomePage {
     public void verifyHomePageElements(){
         test.webDriverFactory().getWait().until(ExpectedConditions.visibilityOfElementLocated(HomeElements.homePageLogo));
     }
+ public void clickElement(){
+
+        test.webDriverFactory().getWait().until(ExpectedConditions.elementToBeClickable(HomeElements.clickButton)).click();
+    }
+
 
 }
