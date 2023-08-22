@@ -7,7 +7,7 @@ set -e #stop immediately if any error happens
 avd_name=$1
 
 if [[ -z "$avd_name" ]]; then
-  avd_name="test"
+  avd_name="Pixel 6 API 33"
 fi
 
 #check if emulator work well
