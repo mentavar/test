@@ -1,5 +1,6 @@
 package test.utils.factory;
 
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import test.utils.Test;
 import test.utils.config.EnvDataConfig;
 import io.appium.java_client.MobileElement;
@@ -10,6 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -35,8 +37,27 @@ public class WebDriverFactory {
         this.test = test;
         envDataConfig = new EnvDataConfig();
         context = test.context();
+
+        String filePath1 = "node/AppiumServerGUI/resources/app/node_modules/appium/build/lib/main.js";
+        File file1 = new File(filePath1);
+        String absolutePath1 = file1.getAbsolutePath();
+
+        String filePath2 = "nodeexe/nodejs/node.exe";
+        File file2 = new File(filePath2);
+        String absolutePath2 = file2.getAbsolutePath();
+
+
+        AppiumServiceBuilder builder = new AppiumServiceBuilder();
+        builder.withIPAddress("127.0.0.1")
+                .usingPort(4723)
+                .withAppiumJS(new File(absolutePath1))
+                .usingDriverExecutable(new File(absolutePath2));
+        AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
+        service.start();
+
+
         DesiredCapabilities caps1 = new DesiredCapabilities();
-        caps1.setCapability("deviceName", "Pixel 6 API 33");
+        caps1.setCapability("deviceName", "Pixel_6_API_33");
         //caps1.setCapability("udid", "40475748"); //DeviceId from "adb devices" command
         caps1.setCapability("udid", "emulator-5554"); //DeviceId from "adb devices" command
         caps1.setCapability("platformName", "Android");
