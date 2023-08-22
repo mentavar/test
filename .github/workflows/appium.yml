@@ -52,10 +52,13 @@ jobs:
     - name: Install and run Appium Server
       run: |
          chmod +x ./scripts/RunAppiumServer.sh &
-       
+
+    - name: Wait for Appium to start
+      run: sleep 30 # Adjust the time as needed
+      
     - name: Run Appium Tests
       run: |
-          mvn test
+         chmod +x ./test-execution.sh
  
        
   
