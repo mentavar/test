@@ -14,10 +14,10 @@ fi
 emulator -version
 
 # create virtual device, default using Android 9 Pie image (API Level 28)
-echo no | avdmanager create avd -n test -k "system-images;android-29;google_apis;x86"
+echo no | avdmanager create avd -n Pixel 6 API 33 -k "system-images;android-33;google_apis;x86_64"
 
 # start the emulator
-emulator -avd Pixel test -no-audio -no-window -no-accel &
+emulator -avd Pixel Pixel 6 API 33 -no-audio -no-window -no-accel &
 
 # show connected virtual device
 adb devices
