@@ -57,7 +57,7 @@ public class WebDriverFactory {
 
 
         DesiredCapabilities caps1 = new DesiredCapabilities();
-        caps1.setCapability("deviceName", "Pixel_6_API_33");
+        caps1.setCapability("deviceName", "Pixel_6_API_33_1");
         //caps1.setCapability("udid", "40475748"); //DeviceId from "adb devices" command
         caps1.setCapability("udid", "emulator-5554"); //DeviceId from "adb devices" command
         caps1.setCapability("platformName", "Android");
