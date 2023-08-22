@@ -35,7 +35,9 @@ jobs:
             
     - name: Install Sdk
       run: |
-          chmod +x ./scripts/install-android-sdk.sh
+          yes Y | sdkmanager --licenses 
+          sdkmanager --install ${ANDROID_SDK_PACKAGES}
+          yes Y | sdkmanager --licenses
   
     - name: Build emulator
       run: |
