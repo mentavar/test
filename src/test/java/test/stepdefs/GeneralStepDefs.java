@@ -16,6 +16,7 @@ public class GeneralStepDefs {
     @Given("user opens youtube")
     public void user_requests_for_id_authentication() {
         test.mobile().sampleTestYoutubePage().verifyHomePageElements();
+         test.mobile().sampleTestYoutubePage().clickElement();
     }
 
 }
