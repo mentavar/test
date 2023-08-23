@@ -38,14 +38,6 @@ public class WebDriverFactory {
         envDataConfig = new EnvDataConfig();
         context = test.context();
 
-      AppiumServiceBuilder builder = new AppiumServiceBuilder()
-                .withAppiumJS(new File("C:\\Users\\ftheofil\\AppData\\Local\\Programs\\Appium Server GUI\\resources\\app\\node_modules\\appium\\build\\lib\\main.js")) // Path to your appium.js file
-                .withArgument(GeneralServerFlag.LOG_LEVEL, "info");
-
-        // Start the Appium server
-        AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
-        service.start();
-
 
         DesiredCapabilities caps1 = new DesiredCapabilities();
         caps1.setCapability("deviceName", "Pixel_6_API_33_1");
