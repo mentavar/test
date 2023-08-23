@@ -21,3 +21,4 @@ emulator -avd Pixel_6_API_33_1 -no-audio -no-window -no-accel &
 
 # show connected virtual device
 adb devices
+adb -s emulator-5554 emu avd name
