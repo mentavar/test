@@ -38,32 +38,13 @@ public class WebDriverFactory {
         envDataConfig = new EnvDataConfig();
         context = test.context();
 
-          AppiumServiceBuilder builder = new AppiumServiceBuilder();
-        builder.withIPAddress("127.0.0.1")
-                .usingPort(4723)
-                .withAppiumJS(
-                        new File("C:\\Users\\ftheofil\\AppData\\Local\\Programs\\Appium Server GUI\\resources\\app\\node_modules\\appium\\build\\lib\\main.js"))
-                .usingDriverExecutable(new File("C:\\Program Files\\nodejs\\node.exe"));
+      AppiumServiceBuilder builder = new AppiumServiceBuilder()
+                .withAppiumJS(new File("C:\\Users\\ftheofil\\AppData\\Local\\Programs\\Appium Server GUI\\resources\\app\\node_modules\\appium\\build\\lib\\main.js")) // Path to your appium.js file
+                .withArgument(GeneralServerFlag.LOG_LEVEL, "info");
+
+        // Start the Appium server
         AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
         service.start();
-
-
-//        String filePath1 = "node/AppiumServerGUI/resources/app/node_modules/appium/build/lib/main.js";
-//        File file1 = new File(filePath1);
-//        String absolutePath1 = file1.getAbsolutePath();
-//
-//        String filePath2 = "nodeexe/nodejs/node.exe";
-//        File file2 = new File(filePath2);
-//        String absolutePath2 = file2.getAbsolutePath();
-//
-//
-//        AppiumServiceBuilder builder = new AppiumServiceBuilder();
-//        builder.withIPAddress("127.0.0.1")
-//                .usingPort(4723)
-//                .withAppiumJS(new File(absolutePath1))
-//                .usingDriverExecutable(new File(absolutePath2));
-//        AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
-//        service.start();
 
 
         DesiredCapabilities caps1 = new DesiredCapabilities();
