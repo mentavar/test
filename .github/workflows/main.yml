@@ -55,7 +55,7 @@ jobs:
          chmod +x ./scripts/RunAppiumServer.sh
          
     - name: Wait for Appium to start
-      run: sleep 30 # Adjust the time as needed
+      run: sleep 60 # Adjust the time as needed
 
     - name: Print Appium status
       run: curl http://127.0.0.1:4723/wd/hub/status
