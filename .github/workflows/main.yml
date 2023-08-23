@@ -50,10 +50,25 @@ jobs:
     #   run: |
     #       chmod +x ./scripts/emulator-up.sh
    
-    - name: Install and run Appium Server
-      run: |
-         chmod +x ./scripts/RunAppiumServer.sh
-         
+    # - name: Install and run Appium Server
+    #   run: |
+    #      chmod +x ./scripts/RunAppiumServer.sh
+
+    - name: Install appium
+      run: npm install -g appium
+
+    - name: Check appium installation 
+      run: appium -v
+
+    - name: Install appium automator
+      run: appium driver install uiautomator2
+    
+    - name: Update  appium automator
+      run: appium driver update uiautomator2
+
+    - name: Start appium
+      run: appium server --address 127.0.0.1 --port 4723 --use-drivers uiautomator2 --base-path /wd/hub
+      
     - name: Wait for Appium to start
       run: sleep 60 # Adjust the time as needed
 
