@@ -47,6 +47,10 @@ jobs:
       run: |
           chmod +x ./scripts/start-emulator.sh
           EMULATOR_TIMEOUT=$EMULATOR_TIMEOUT EMULATOR_NAME=$EMULATOR_NAME ./scripts/start-emulator.sh
+
+    - name: Emulator Up
+      run: |
+          chmod +x ./scripts/emulator-up.sh
    
     - name: Install and run Appium Server
       run: |
