@@ -65,6 +65,7 @@ function check_emulator_status () {
     if [ "$result" == "1" ]; then
       printf "\e[K${G}==> \u2713 Emulator is ready : '$result'           ${NC}\n"
       adb devices -l
+      adb -s emulator-5554 emu avd name
       adb shell input keyevent 82
       break
     elif [ "$result" == "" ]; then
