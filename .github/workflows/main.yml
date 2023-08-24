@@ -11,8 +11,7 @@ env:
   EMULATOR_NAME: Pixel_6_API_33_1
 jobs:
   build:
-    runs-on: windows-latest
-    # runs-on: macos-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3 #checkout the code 
     - name: Set up JDK 17
