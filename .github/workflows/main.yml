@@ -11,7 +11,8 @@ env:
   EMULATOR_NAME: Pixel_6_API_33_1
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: buildjet-2vcpu-ubuntu-2204
+    # runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3 #checkout the code 
     - name: Set up JDK 17
