@@ -58,7 +58,7 @@ public class WebDriverFactory {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        wait = new WebDriverWait(driver1, 600);
+        wait = new WebDriverWait(driver1, 3600);
     }
 
     public AndroidDriver<MobileElement> getDriver() {
