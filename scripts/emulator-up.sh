@@ -17,7 +17,7 @@ emulator -version
 echo no | avdmanager create avd -n Pixel_6_API_33_1 -k "system-images;android-33;google_apis;x86_64"
 
 # start the emulator
-emulator -avd Pixel_6_API_33_1 -no-audio -no-window -no-accel &
+emulator -avd Pixel_6_API_33_1 &
 
 # show connected virtual device
 adb devices
