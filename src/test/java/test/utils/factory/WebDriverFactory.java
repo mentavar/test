@@ -47,8 +47,6 @@ public class WebDriverFactory {
         caps1.setCapability("platformVersion", "13.0");
         caps1.setCapability("automationName", "UiAutomator2");
         caps1.setCapability("appium:uiautomator2ServerLaunchTimeout", 120000);
-        caps1.setCapability("appium:ignoreHiddenApiPolicyError", true);
-        caps1.setCapability("appium:adbExecTimeout", 50000);
         caps1.setCapability("skipUnlock", "false");
         caps1.setCapability("appPackage", "com.google.android.youtube");
         caps1.setCapability("appActivity", "com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity");
