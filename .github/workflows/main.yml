@@ -27,7 +27,7 @@ jobs:
         
     - name: Android emulator
       uses: actions/checkout@v3
-        
+      
     - name: Add avdmanager and sdkmanager to system PATH
       run: |
             echo "{path}" >> $GITHUB_PATH
