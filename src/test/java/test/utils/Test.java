@@ -5,6 +5,8 @@ import test.utils.factory.ContextFactory;
 import test.utils.factory.PageObjectFactory;
 import test.utils.factory.WebDriverFactory;
 
+import java.io.IOException;
+
 public class Test {
 
 
@@ -16,7 +18,7 @@ public class Test {
 
     Logger logger;
 
-    public Test() {
+    public Test() throws IOException {
         contextFactory = new ContextFactory();
         webDriverFactory = new WebDriverFactory(Test.this);
         pageObjectFactory = new PageObjectFactory(Test.this);
