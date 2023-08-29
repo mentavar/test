@@ -1,6 +1,8 @@
 package test.utils.factory;
 
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import test.utils.Test;
 import test.utils.config.EnvDataConfig;
 import io.appium.java_client.MobileElement;
@@ -12,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -33,7 +36,7 @@ public class WebDriverFactory {
 
     private EnvironmentVariables env;
 
-    public WebDriverFactory(Test test) {
+    public WebDriverFactory(Test test) throws IOException {
         this.test = test;
         envDataConfig = new EnvDataConfig();
         context = test.context();
@@ -56,11 +59,15 @@ public class WebDriverFactory {
         caps1.setCapability("fullReset", "false");
         try {
             driver1 = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps1);
-
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+
         wait = new WebDriverWait(driver1, 3600);
+        File screenshot = driver1.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(screenshot, new File("screenshot1.png"));
+        String screenshotPath = "artifacts/screenshots/" + System.currentTimeMillis() + ".png";
+        FileUtils.copyFile(screenshot, new File(screenshotPath));
     }
 
     public AndroidDriver<MobileElement> getDriver() {
@@ -70,6 +77,5 @@ public class WebDriverFactory {
     public WebDriverWait getWait() {
         return wait;
     }
-
 
 }
