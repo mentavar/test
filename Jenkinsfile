@@ -11,7 +11,7 @@ pipeline {
       stage('Build') {
           steps {
               script {
-                  // Commands to build your project
+                  sh 'npm install -g appium'
               }
           }
       }
