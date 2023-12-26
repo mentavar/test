@@ -4,7 +4,7 @@ pipeline {
  stages {
      stage('Checkout') {
          steps {
-             git 'https://github.com/user/repo.git'
+             git credentialsId: 'new_token', url: 'https://github.com/user/repo.git'
          }
      }
      
