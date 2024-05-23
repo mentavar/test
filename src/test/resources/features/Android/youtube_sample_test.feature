@@ -4,4 +4,9 @@ Feature: Youtube sample test
   Scenario: Open youtube
     Given user opens youtube
 
+  @US-002
+  @manual
+  Scenario: Open youtube
+    Given user opens youtube
+
 
